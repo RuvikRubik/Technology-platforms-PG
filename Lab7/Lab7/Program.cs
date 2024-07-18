@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -95,24 +96,6 @@ class Program
         return directories.Length + files.Length;
     }
 
-    static void Serialize<T>(T obj, string filePath)
-    {
-        var formatter = new BinaryFormatter();
-        using (var stream = new FileStream(filePath, FileMode.Create))
-        {
-            formatter.Serialize(stream, obj);
-        }
-    }
-
-    static T Deserialize<T>(string filePath)
-    {
-        var formatter = new BinaryFormatter();
-        using (var stream = new FileStream(filePath, FileMode.Open))
-        {
-            return (T)formatter.Deserialize(stream);
-        }
-    }
-
     static void Main(string[] args)
     {
         if(args.Length == 0)
@@ -143,9 +126,10 @@ class Program
             directoryContents.Add(dir.Name, itemCount);
         }
 
-
-        Serialize(directoryContents, "data.bin");
-        var deserializedDirectoryContents = Deserialize<SortedDictionary<string, long>>("data.bin");
+        string output = JsonConvert.SerializeObject(directoryContents);
+        File.WriteAllText("data.json", output);
+        string input = File.ReadAllText("data.json");
+        Dictionary<string, long> deserializedDirectoryContents = JsonConvert.DeserializeObject<Dictionary<string, long>>(input);
 
         // Wyświetlamy zawartość kolekcji po deserializacji
         Console.WriteLine();

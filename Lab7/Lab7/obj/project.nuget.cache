@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "T3MG6kbhn5J8nA7G0a2tYfn50XMvvvx+uPJkSPecD7mZ9/Djx8pf0UKSgnafvg0HNyNV/+moYgEYVbZUdaLflw==",
+  "dgSpecHash": "v9NqKLBtkjE7lBaUlNdQT9xFiUBDmh8mga5DArFV48eiYDlw9zY/JYUYX6E6ZJjYNKjTB4EcIW0BfEGIpYqXjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\falco\\source\\repos\\Lab7\\Lab7\\Lab7.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\falco\\Documents\\GitHub\\Technology-platforms-PG\\Lab7\\Lab7\\Lab7.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\falco\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
